@@ -8,20 +8,72 @@ import IMG5 from '../../assets/portfolio5.png'
 import IMG6 from '../../assets/portfolio6.jpg'
 
 const Portofolio = () => {
+  const data = [
+    {
+      id: 1,
+      image: IMG1,
+      title: 'Crpto Currency Dashboard 7 Financial Visualitation',
+      github: 'https://github.com',
+      demo: 'https://dribble.com/Alien_pixels'
+    },
+    {
+      id: 2,
+      image: IMG2,
+      title: 'Chart templates & infographics in figma',
+      github: 'https://github.com',
+      demo: 'https://dribble.com/Alien_pixels'
+    },
+    {
+      id: 3,
+      image: IMG3,
+      title: 'Maintaining task and tracking progress',
+      github: 'https://github.com',
+      demo: 'https://dribble.com/Alien_pixels'
+    },
+    {
+      id: 4,
+      image: IMG4,
+      title: 'Chart templates & infographics in figma',
+      github: 'https://github.com',
+      demo: 'https://dribble.com/Alien_pixels'
+    },
+    {
+      id: 5,
+      image: IMG5,
+      title: 'Chart templates & infographics in figma',
+      github: 'https://github.com',
+      demo: 'https://dribble.com/Alien_pixels'
+    },
+    {
+      id: 6,
+      image: IMG6,
+      title: 'Maintaining task and tracking progress',
+      github: 'https://github.com',
+      demo: 'https://dribble.com/Alien_pixels'
+    }
+  ]
   return (
     <section id='portfolio'>
       <h5>My Recent Work</h5>
       <h2>Portfolio</h2>
 
       <div className='container portfolio__container'>
-        <article className='portfolio__item'>
-          <div className='portfolio__item-image'>
-            
-          </div>
-          <h3>This is a portfolio item title</h3>
-          <a href="https://github.com">Github</a>
-          <a href="https://dribble.com/Alien_pixels" className='btn btn-primary' target='_blank'>Live Demo</a>
-        </article>
+        {
+          data.map(({id, image, title, github, demo}) => {
+            return(
+            <article key={id} className='portfolio__item'>
+              <div className='portfolio__item-image'>
+                <img src={image} alt={title} />
+              </div>
+              <h3>{title}</h3>
+              <div className="portfolio__item-cta">
+                <a href={github} className='btn' target='_blank'>Github</a>
+                <a href={demo} className='btn btn-primary' target='_blank'>Live Demo</a>
+              </div>
+            </article>
+          )
+          })
+        }
       </div>
     </section>
   )
