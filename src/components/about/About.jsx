@@ -170,7 +170,7 @@ const About = () => {
           </TabPanel>
         </Box>
       </div>
-      <Waypoint onLeave={_handleLeave}/>
+      {/* <Waypoint onLeave={_handleLeave}/> */}
     </section>
   )
 }
