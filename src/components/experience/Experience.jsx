@@ -16,8 +16,7 @@ const Experience = () => {
     <section id='experience'>
       <Waypoint onEnter={_handleEnter} />
       <h5>What Skills I have</h5>
-      <h2>My Experience</h2>
-
+      <h2>My Skill</h2>
       <div className='container experience__container'>
         <div className="experience__frontend">
           <h3>Frontend Development</h3>
