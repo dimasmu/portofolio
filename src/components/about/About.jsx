@@ -126,7 +126,11 @@ const About = () => {
                   <div class="heading-date">2014-2018</div>
                 </div>
                 <div class="resume-sub-heading"><span>BACHELOR OF SCIENCE INFORMATION TECHNOLOGY</span></div>
-                <div class="resume-heading-description"><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam quasi odit, non nobis, aliquid cumque fuga vitae sed nam incidunt atque quis id aliquam eveniet rerum dolor quae commodi, dolorum porro! Culpa, enim quo similique blanditiis repellendus dicta fuga optio voluptate laboriosam, ex quia error sint explicabo! Laudantium, nihil placeat.</span></div>
+                <div class="resume-heading-description">
+                  <span>
+                    an informatics engineering student graduated in 2018 with a GPA of 3.37, the thesis I am writing is entitled “Bitcoin price prediction with backpropagation algorithm”. This final project I made aims for crypto investors, especially in the bitcoin market, to be able to make price predictions based on the data collected
+                  </span>
+                </div>
               </div>
             </div>
           </TabPanel>
@@ -166,7 +170,7 @@ const About = () => {
           </TabPanel>
         </Box>
       </div>
-      {/* <Waypoint onLeave={_handleLeave}/> */}
+      <Waypoint onLeave={_handleLeave}/>
     </section>
   )
 }

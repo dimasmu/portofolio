@@ -61,6 +61,7 @@ const Contact = () => {
           <button type='submit' className='btn btn-primary'>Send message</button>
         </form>
       </div>
+      <Waypoint onLeave={_handleEnter} />
     </section>
   )
 }

@@ -11,6 +11,9 @@ function Header() {
   const _handleEnter = () => {
     setActive('#')
   }
+  const _handleLeave = () => {
+    setActive('#about')
+  }
   return (
     <header>
       <Waypoint onEnter={_handleEnter} />
@@ -20,6 +23,7 @@ function Header() {
           <div className="profile__picture-background"></div>
         </div>
       </div>
+      <Waypoint onLeave={_handleLeave} />
     </header>
   )
 }
