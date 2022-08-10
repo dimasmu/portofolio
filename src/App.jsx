@@ -24,7 +24,7 @@ const App = () => {
         <Portofolio />
         <Contact />
       </ActviveContext.Provider>
-      <Testimonial />
+      {/* <Testimonial /> */}
       <Footer />
     </>
   );

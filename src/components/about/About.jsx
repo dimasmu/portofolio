@@ -117,7 +117,7 @@ const About = () => {
             <Tab label="Education" {...a11yProps(0)} style={{ minWidth: "50%" }} />
             <Tab label="Working History" {...a11yProps(1)} style={{ minWidth: "90%" }} />
           </Tabs>
-          <TabPanel style={{ maxWidth: "85%" }} value={value} index={0} variant="scrollable">
+          <TabPanel style={{ maxWidth: "85%", overflow: 'auto' }} value={value} index={0} variant="scrollable">
             <div className="resume-screen-container">
               <div class="resume-heading">
                 <div class="resume-main-heading">

@@ -110,6 +110,8 @@ header {
         height: 68vh;
     }
 
+
+
     section {
         margin-top: 6rem;
     }
@@ -128,5 +130,10 @@ header {
 
     section>h2 {
         margin-bottom: 2rem;
+    }
+
+    .header_container {
+        display: flex;
+        flex-direction: column;
     }
 }
