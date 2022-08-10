@@ -132,7 +132,7 @@ const Experience = () => {
           </div>
         </div>
       </div>
-      {/* <Waypoint onEnter={_handleLeave}/> */}
+      {/* <Waypoint onLeave={_handleEnter}/> */}
     </section>
   )
 }

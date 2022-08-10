@@ -71,7 +71,7 @@ const About = () => {
     setActive('#about')
   }
   const _handleLeave = () => {
-    setActive('#experience')
+    setActive('#about')
   }
 
   const [value, setValue] = React.useState(0);
