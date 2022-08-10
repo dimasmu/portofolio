@@ -20,11 +20,11 @@ const App = () => {
         <Nav />
         <About />
         <Experience />
-        <Service />
+        {/* <Service /> */}
         <Portofolio />
         <Contact />
       </ActviveContext.Provider>
-      <Testimonial />
+      {/* <Testimonial /> */}
       <Footer />
     </>
   );
