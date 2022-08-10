@@ -107,10 +107,8 @@ header {
 /*===============MEDIA QUERY (MEDIUM DEVICES)=================*/
 @media screen and (max-width: 1024px) {
     header {
-        height: 68vh;
+        height: 80vh;
     }
-
-
 
     section {
         margin-top: 6rem;
@@ -120,7 +118,7 @@ header {
 /*===============MEDIA QUERY (SMALL DEVICES)=================*/
 @media screen and (max-width: 600px) {
     header {
-        height: 100vh;
+        height: 125vh;
     }
 
     .header_socials,

@@ -8,7 +8,7 @@ const CTA = () => {
       <h1>Dimas Maendra Utomo</h1>
       <h5 className='text-light'>Backend Developer</h5>
       <div className="profile__options">
-        <a href={CV} className="btn" >Download CV</a>
+        <a href={CV} className="btn" target="_blank">Download CV</a>
         <a href="#contact" className='btn btn-primary'>let's talk</a>
       </div>
     </div>
