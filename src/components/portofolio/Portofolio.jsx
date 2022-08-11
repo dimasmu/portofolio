@@ -24,6 +24,10 @@ import ESKA3 from '../../assets/eska3.png'
 import ESKA4 from '../../assets/eska4.png'
 import ESKA5 from '../../assets/eska5.png'
 
+import MOVIE1 from '../../assets/movie1.png'
+import MOVIE2 from '../../assets/movie2.png'
+import MOVIE3 from '../../assets/movie3.png'
+
 const Portofolio = () => {
   const data = [
     {
@@ -37,7 +41,7 @@ const Portofolio = () => {
       content: 'The INATRADE application is one of the export facilitation/facilities managed by the Ministry of Trade of the Republic of Indonesia, an application used to apply for export and import permits. To be able to access the application, the first thing to do is register a company to get Access Rights.'
     },
     {
-      id: 1,
+      id: 2,
       image: [
         ESKA1, ESKA2, ESKA3, ESKA4, ESKA5
       ],
@@ -45,6 +49,16 @@ const Portofolio = () => {
       github: '#',
       demo: '#',
       content: 'the Eska application is made to support the certification process of origin of goods for both export and import. The main function of this application is to issue a certificate of origin of the goods by an agency called IPSKA'
+    },
+    {
+      id: 3,
+      image: [
+        MOVIE1, MOVIE2, MOVIE3
+      ],
+      title: 'Movie CMS (learn laravel)',
+      github: 'https://github.com/dimasmu/laravel_8',
+      demo: '#',
+      content: 'make a simple crud from laravel for the needs of the cms website movie. learn seeder, migration, model, repository pattern, create controller and view using laravel blade template engine'
     }
   ]
   console.log("tes");
@@ -79,16 +93,20 @@ const Portofolio = () => {
                 </Swiper>
                 <h3>{title}</h3>
                 <p>{content}</p>
-                {/* <div className="portfolio__item-cta">
-                <a href={github} className='btn' target='_blank'>Github</a>
-                <a href={demo} className='btn btn-primary' target='_blank'>Live Demo</a>
-              </div> */}
+                <div className="portfolio__item-cta" style={{ marginTop: '1rem' }}>
+                  {github !== "#" &&
+                    < a href={github} className='btn' target='_blank'>Github</a>
+                  }
+                  {demo !== "#" &&
+                    <a href={demo} className='btn btn-primary' target='_blank'>Live Demo</a>
+                  }
+                </div>
               </article>
             )
           })
         }
       </div>
-    </section>
+    </section >
   )
 }
 
