@@ -1,8 +1,6 @@
 import React, { useContext } from 'react'
 import './header.css'
 import CTA from './CTA'
-import ME from '../../assets/me.jpg'
-import HeaderSocial from './headerSocial'
 import { Waypoint } from 'react-waypoint'
 import { ActviveContext } from '../../App'
 
