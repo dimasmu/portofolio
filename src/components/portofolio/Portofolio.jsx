@@ -13,7 +13,6 @@ import "swiper/css/navigation";
 // import required modules
 import { Pagination } from "swiper";
 import { Button, createTheme } from '@mui/material';
-import { blue } from '@mui/material/colors';
 import { ThemeProvider } from '@emotion/react';
 
 const blueTheme = createTheme({

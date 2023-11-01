@@ -103,5 +103,25 @@
     "github": "#",
     "demo": "https://staging.inaheart.org",
     "content": "create a website for the Indonesian heart doctor community in 2 phases. features available in the first phase such as. search for perki members, guideline library for heart doctors, database for perki chapters indonesia, knowing the perki event schedule."
+  },
+  {
+    "id": 6,
+    "image": [
+      "/assets/perkiwinform1.png",
+      "/assets/perkiwinform2.png",
+      "/assets/perkiwinform3.png",
+      "/assets/perkiwinform4.png",
+      "/assets/perkiwinform5.png",
+      "/assets/perkiwinform6.png",
+      "/assets/perkiwinform7.png",
+      "/assets/perkiwinform8.png",
+      "/assets/perkiwinform9.png",
+      "/assets/perkiwinform10.png"
+    ],
+    "skills": ["C#", "winform", "aws ec2", "aws s3"],
+    "title": "Perki inaheart - upload certificate",
+    "github": "#",
+    "demo": "#",
+    "content": "perki phase 2 was created using the C# programming language. This application is based on desktop, made for the purpose of uploading certificates belonging to perki members. This application uploads to aws s3 storage so that there is no need to scale up the server so as to cut upgraded costs."
   }
 ]

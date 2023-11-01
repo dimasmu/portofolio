@@ -1,9 +1,31 @@
 import React from 'react'
+import Typewriter from 'typewriter-effect';
 
 const CTA = () => {
   return (
     <div className="cta">
-      <h5>Hello i'am</h5>
+      <h5>
+        {
+          <Typewriter
+            onInit={(typewriter) => {
+              typewriter.typeString(`Hello i'am`)
+                .callFunction(() => {
+                  console.log('String typed out!');
+                })
+                .pauseFor(2500)
+                .callFunction(() => {
+                  console.log('All strings were deleted');
+                })
+                .start();
+            }}
+
+            options={{
+              autoStart: true,
+              loop: true
+            }}
+          />
+        }
+      </h5>
       <h1>Dimas Maendra Utomo</h1>
       <h5 className='text-light'>Backend Developer</h5>
       <div className="profile__options">
