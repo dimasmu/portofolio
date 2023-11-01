@@ -1,7 +1,13 @@
 [
   {
     "id": 1,
-    "image": ["/assets/ip_1.png", "/assets/ip_2.png", "/assets/ip_3.png", "/assets/ip_4.png", "/assets/ip_5.png"],
+    "image": [
+      "/assets/ip_1.png",
+      "/assets/ip_2.png",
+      "/assets/ip_3.png",
+      "/assets/ip_4.png",
+      "/assets/ip_5.png"
+    ],
     "title": "INATRADE KEMENDAG",
     "github": "#",
     "demo": "https://inatrade.kemendag.go.id",
@@ -9,7 +15,13 @@
   },
   {
     "id": 2,
-    "image": ["/assets/eska1.png", "/assets/eska2.png", "/assets/eska3.png", "/assets/eska4.png", "/assets/eska5.png"],
+    "image": [
+      "/assets/eska1.png",
+      "/assets/eska2.png",
+      "/assets/eska3.png",
+      "/assets/eska4.png",
+      "/assets/eska5.png"
+    ],
     "title": "ESKA KEMENDAG",
     "github": "#",
     "demo": "https://ska.kemendag.go.id",
@@ -22,5 +34,36 @@
     "github": "https://github.com/dimasmu/laravel_8",
     "demo": "#",
     "content": "make a simple crud from laravel for the needs of the cms website movie. learn seeder, migration, model, repository pattern, create controller and view using laravel blade template engine"
+  },
+  {
+    "id": 4,
+    "image": [
+      "/assets/wow1.png",
+      "/assets/wow2.png",
+      "/assets/wow3.png",
+      "/assets/wow4.png",
+      "/assets/wow5.png",
+      "/assets/wow6.png",
+      "/assets/wow7.png"
+    ],
+    "title": "Wow konsultan",
+    "github": "#",
+    "demo": "https://staging.wowkonsultan.com",
+    "content": "created a consulting application similar to halodoc but mostly for tax consulting. created using 2 programming languages. the first is php laravel to make consultant selection and payment via payment gateway (xendit). And making chat features using node js with websocket technology (socket io). All front end uses vue js with ui library using vuetify."
+  },
+  {
+    "id": 5,
+    "image": [
+      "/assets/perki1.png",
+      "/assets/perki2.png",
+      "/assets/perki3.png",
+      "/assets/perki4.png",
+      "/assets/perki5.png",
+      "/assets/perki6.png"
+    ],
+    "title": "Perki inaheart",
+    "github": "#",
+    "demo": "https://staging.inaheart.org",
+    "content": "create a website for the Indonesian heart doctor community in 2 phases. features available in the first phase such as. search for perki members, guideline library for heart doctors, database for perki chapters indonesia, knowing the perki event schedule."
   }
 ]

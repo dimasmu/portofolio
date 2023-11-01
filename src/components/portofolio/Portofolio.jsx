@@ -44,7 +44,7 @@ const Portofolio = () => {
                   }
                 </Swiper>
                 <h3>{title}</h3>
-                <p style={{ minHeight: '120px' }}>{content}</p>
+                <p style={{ minHeight: '10rem' }}>{content}</p>
                 <div className="portfolio__item-cta" style={{ marginTop: '1rem' }}>
                   {github !== "#" &&
                     < a href={github} className='btn' target='_blank'>Github</a>

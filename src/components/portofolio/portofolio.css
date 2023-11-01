@@ -22,6 +22,10 @@
     overflow: hidden;
 }
 
+.portfolio__item-image .swiper-wrapper {
+    height: 280px !important;
+}
+
 .each-slide-effect>div {
     display: flex;
     align-items: center;
