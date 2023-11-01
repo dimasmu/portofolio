@@ -51,6 +51,14 @@
     margin-bottom: 1rem;
 }
 
+.portofolio-content{
+    min-height: 10rem;
+}
+
+.portofolio-skill button{
+    
+}
+
 /*===============MEDIA QUERY (MEDIUM DEVICES)=================*/
 @media screen and (max-width: 1024px) {
     .portfolio__container {

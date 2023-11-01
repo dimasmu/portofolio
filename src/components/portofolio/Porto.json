@@ -8,6 +8,15 @@
       "/assets/ip_4.png",
       "/assets/ip_5.png"
     ],
+    "skills": [
+      "node js",
+      "react js",
+      "react hook",
+      "prime react",
+      "express js",
+      "sequelize",
+      "postgresql"
+    ],
     "title": "INATRADE KEMENDAG",
     "github": "#",
     "demo": "https://inatrade.kemendag.go.id",
@@ -22,6 +31,15 @@
       "/assets/eska4.png",
       "/assets/eska5.png"
     ],
+    "skills": [
+      "node js",
+      "react js",
+      "react hook",
+      "prime react",
+      "express js",
+      "sequelize",
+      "postgresql"
+    ],
     "title": "ESKA KEMENDAG",
     "github": "#",
     "demo": "https://ska.kemendag.go.id",
@@ -30,6 +48,7 @@
   {
     "id": 3,
     "image": ["/assets/movie1.png", "/assets/movie2.png", "/assets/movie3.png"],
+    "skills": ["laravel", "bootstrap", "jquery", "mysql"],
     "title": "Movie CMS",
     "github": "https://github.com/dimasmu/laravel_8",
     "demo": "#",
@@ -46,6 +65,18 @@
       "/assets/wow6.png",
       "/assets/wow7.png"
     ],
+    "skills": [
+      "vue js",
+      "vuetify",
+      "laravel",
+      "payment gateway (xendit)",
+      "alicloud",
+      "digitocean",
+      "express",
+      "sequelize",
+      "websocket (socket io)",
+      "mysql"
+    ],
     "title": "Wow konsultan",
     "github": "#",
     "demo": "https://staging.wowkonsultan.com",
@@ -60,6 +91,13 @@
       "/assets/perki4.png",
       "/assets/perki5.png",
       "/assets/perki6.png"
+    ],
+    "skills": [
+      "laravel blade",
+      "laravel",
+      "laravel backpack",
+      "mysql",
+      "aws ec2"
     ],
     "title": "Perki inaheart",
     "github": "#",
