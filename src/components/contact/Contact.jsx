@@ -1,7 +1,7 @@
 import React, { useContext, useRef } from 'react'
 import './contact.css'
 import { Waypoint } from 'react-waypoint'
-import { ActviveContext } from '../../App'
+import { ActiveContext } from '../../App'
 import { MdOutlineMail } from 'react-icons/md'
 import { RiMessengerLine } from 'react-icons/ri'
 import { BsWhatsapp } from 'react-icons/bs'
@@ -10,7 +10,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Contact = () => {
-  const { active, setActive } = useContext(ActviveContext)
+  const { active, setActive } = useContext(ActiveContext)
   const _handleEnter = () => {
     setActive('#contact')
   }

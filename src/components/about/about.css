@@ -1,29 +1,12 @@
+/* ABOUT SECTION */
+#about {
+    padding-top: 3rem;
+}
+
 .about__container {
     display: grid;
-    grid-template-columns: 1fr;
-}
-
-.about__me {
-    width: 100%;
-    aspect-ratio: 1/1;
-    border-radius: 2rem;
-    background: linear-gradient(45deg,
-            transparent,
-            var(--color-primary),
-            transparent);
-    display: grid;
-    place-items: center;
-}
-
-.about__me-image {
-    border-radius: 2rem;
-    overflow: hidden;
-    transform: rotate(10deg);
-    transition: var(--transition);
-}
-
-.about__me-image:hover {
-    transform: rotate(0);
+    grid-template-columns: 35% 50%;
+    gap: 15%;
 }
 
 .about__cards {
@@ -47,14 +30,9 @@
     cursor: default;
 }
 
-.about__icon {
-    color: var(--color-primary);
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
-}
-
 .about__card h5 {
     font-size: 0.95rem;
+    color: var(--color-light);
 }
 
 .about__card small {
@@ -64,172 +42,48 @@
 
 .about__content p {
     margin: 2rem 0 2.6rem;
+    color: var(--color-light);
 }
 
-.tabs {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 1000px;
-    height: 360px;
-    padding: 30px 20px;
-    background: var(--color-bg-variant);
-    box-shadow: 2px 1px 5px 0.5px #ccc;
-    overflow: hidden;
+.about__timeline {
+    margin-top: 3rem;
 }
 
-.tabs .tab-header {
-    float: left;
-    width: 180px;
-    height: 100%;
-    border-right: 1px solid #ccc;
-    padding: 50px 0px;
-}
-
-.tabs .tab-header>div {
-    height: 50px;
-    line-height: 50px;
-    font-size: 16px;
-    font-weight: 600;
-    color: #888;
-    cursor: pointer;
-    padding-left: 10px;
-}
-
-.tabs .tab-header>div:hover,
-.tabs .tab-header>div.active {
-    color: #00acee;
-}
-
-.tabs .tab-header div i {
-    display: inline-block;
-    margin-left: 10px;
-    margin-right: 5px;
-}
-
-.tabs .tab-content {
-    position: relative;
-    height: 100%;
-    overflow: hidden;
-}
-
-.tabs .tab-content>div>i {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    background: #555;
-    color: #f5f5f5;
-    font-size: 25px;
-    font-weight: 600;
+.about__timeline h3 {
+    margin-bottom: 2rem;
+    color: var(--color-primary);
     text-align: center;
-    line-height: 50px;
-    border-radius: 50%;
 }
 
-.tabs .tab-content>div {
-    position: absolute;
-    /* text-align: center; */
-    padding: 35px 49px;
-    top: -11% !important;
-    transition: all 500ms ease-in-out;
+.about__timeline-content p {
+    color: var(--color-light);
+    line-height: 1.6;
 }
 
-.tabs .tab-content>div.active {
-    top: 0px;
-}
-
-.tabs .tab-indicatior {
-    position: absolute;
-    width: 4px;
-    height: 50px;
-    background: #00acee;
-    left: 198px;
-    top: 80px;
-    transition: all 500ms ease-in-out;
-}
-
-.main-title {
-    font-size: 30px;
-    font-weight: 500;
-    margin-bottom: 20px;
-}
-
-.resume-heading {
-    display: flex;
-    flex-direction: column;
-}
-
-.resume-main-heading {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-}
-
-.heading-bullet {
-    position: absolute;
-    left: -30px;
-    height: 15px;
-    width: 15px;
-    top: 5px;
-    border-radius: 50%;
-    background-color: #ff5823;
-}
-
-.heading-date {
-    background-color: #ff5823;
-    padding: 4px 12px;
-    font-size: 14px;
-    border-radius: 14px;
-    color: #f5f5f5;
-}
-
-.resume-heading,
-.resume-screen-container {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.resume-screen-container {
-    justify-content: space-evenly;
-    padding: 0 1rem;
-}
-
-/*===============MEDIA QUERY (MEDIUM DEVICES)=================*/
+/* MEDIA QUERIES (MEDIUM DEVICES) */
 @media screen and (max-width: 1024px) {
     .about__container {
         grid-template-columns: 1fr;
         gap: 0;
     }
 
-    .about__me {
-        width: 50%;
-        margin: 2rem auto 4rem;
-    }
-
-    .about_content p {
+    .about__content p {
         margin: 1rem 0 1.5rem;
     }
 }
 
-/*===============MEDIA QUERY (SMALL DEVICES)=================*/
+/* MEDIA QUERIES (SMALL DEVICES) */
 @media screen and (max-width: 600px) {
-    .about__me {
-        width: 65%;
-        margin: 0 auto 3rem;
-    }
-
     .about__cards {
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
     }
 
-    .about__content {
-        text-align: center;
-    }
-
     .about__content p {
         margin: 1.5rem 0;
+    }
+
+    .about__card {
+        padding: 1rem;
     }
 }

@@ -2,10 +2,10 @@ import React, { useContext } from 'react'
 import './header.css'
 import CTA from './CTA'
 import { Waypoint } from 'react-waypoint'
-import { ActviveContext } from '../../App'
+import { ActiveContext } from '../../App'
 
 function Header() {
-  const { active, setActive } = useContext(ActviveContext)
+  const { active, setActive } = useContext(ActiveContext)
   const _handleEnter = () => {
     setActive('#')
   }
