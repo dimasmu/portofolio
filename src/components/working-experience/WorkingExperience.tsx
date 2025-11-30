@@ -2,65 +2,40 @@ import React, { useContext } from 'react'
 import './working-experience.css'
 import { Waypoint } from 'react-waypoint'
 import { ActiveContext } from '../../App'
-import { Timeline } from '../../components/ui/timeline'
-import { workExperienceData, educationData, WorkExperience, Education } from '../../constant/workingExperienceData'
-import PropTypes from 'prop-types';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import { ThemeProvider, createTheme } from '@mui/system';
-
-function TabPanel(props: any) {
-    const { children, value, index, ...other } = props;
-
-    return (
-        <div
-            role="tabpanel"
-            hidden={value !== index}
-            id={`vertical-tabpanel-${index}`}
-            aria-labelledby={`vertical-tab-${index}`}
-            {...other}
-        >
-            {value === index && (
-                <Box sx={{ p: 3 }}>
-                    <Typography>{children}</Typography>
-                </Box>
-            )}
-        </div>
-    );
-}
-
-TabPanel.propTypes = {
-    children: PropTypes.node,
-    index: PropTypes.number.isRequired,
-    value: PropTypes.number.isRequired,
-};
-
-function a11yProps(index: number) {
-    return {
-        id: `vertical-tab-${index}`,
-        'aria-controls': `vertical-tabpanel-${index}`,
-    };
-}
-
-const theme = createTheme({
-    palette: {
-        background: {
-            paper: '#fff',
-        },
-        text: {
-            primary: '#173A5E',
-            secondary: '#46505A',
-        },
-        action: {
-            active: '#001E3C',
-        },
-        success: {
-            dark: '#009688',
-        },
-    },
-});
+import { workExperienceData, WorkExperience } from '../../constant/workingExperienceData'
+import {
+    Timeline,
+    TimelineItem,
+    TimelineSeparator,
+    TimelineConnector,
+    TimelineContent,
+    TimelineDot,
+    TimelineOppositeContent,
+} from '@mui/lab'
+import {
+    Work,
+    Business,
+    Schedule,
+    Code,
+    Computer,
+    Web,
+    DeveloperMode,
+    Code as CodeIcon,
+    Build,
+    BusinessCenter,
+    CorporateFare,
+    Store,
+    Apartment,
+} from '@mui/icons-material'
+import {
+    Card,
+    CardContent,
+    Typography,
+    Chip,
+    Box,
+    Avatar,
+    useTheme
+} from '@mui/material'
 
 const WorkingExperience = () => {
     const context = useContext(ActiveContext)
@@ -73,10 +48,89 @@ const WorkingExperience = () => {
         setActive('#about')
     }
 
-    const [value, setValue] = React.useState(0);
+    // State to track image loading errors
+    const [imageErrors, setImageErrors] = React.useState<Set<number>>(new Set());
 
-    const handleChange = (event: any, newValue: number) => {
-        setValue(newValue);
+    // Handle image error
+    const handleImageError = (index: number) => {
+        setImageErrors(prev => new Set(prev).add(index));
+    };
+
+    // Icon mapping function to render appropriate icon based on string name
+    const renderDynamicIcon = (iconName?: string) => {
+        const iconProps = { sx: { color: '#1f1f38' } };
+
+        switch (iconName) {
+            case 'Computer':
+                return <Computer {...iconProps} />;
+            case 'Web':
+                return <Web {...iconProps} />;
+            case 'DeveloperMode':
+                return <DeveloperMode {...iconProps} />;
+            case 'Code':
+                return <CodeIcon {...iconProps} />;
+            case 'Build':
+                return <Build {...iconProps} />;
+            case 'BusinessCenter':
+                return <BusinessCenter {...iconProps} />;
+            case 'CorporateFare':
+                return <CorporateFare {...iconProps} />;
+            case 'Store':
+                return <Store {...iconProps} />;
+            case 'Apartment':
+                return <Apartment {...iconProps} />;
+            case 'Work':
+            default:
+                return <Business {...iconProps} />;
+        }
+    };
+
+    // Render icon with fallback to Business icon if image fails to load
+    const renderIconTimeline = (iconImage?: string, iconName?: string, index?: number) => {
+        // If there's an image and it hasn't failed to load, show the image
+        if (iconImage && index !== undefined && !imageErrors.has(index)) {
+            return (
+                <img
+                    src={iconImage}
+                    alt="Company Icon"
+                    onError={() => handleImageError(index)}
+                    style={{
+                        width: '40px',
+                        height: '40px',
+                        objectFit: 'cover',
+                        borderRadius: '50%',
+                        border: '2px solid #1f1f38'
+                    }}
+                />
+            );
+        }
+
+        // Fallback to dynamic icon system with Business as default
+        return renderDynamicIcon(iconName);
+    };
+
+    // Render icon with fallback to Business icon if image fails to load
+    const renderIconCompany = (iconImage?: string, iconName?: string, index?: number) => {
+        // If there's an image and it hasn't failed to load, show the image
+        if (iconImage && index !== undefined && !imageErrors.has(index)) {
+            return (
+                <img
+                    src={iconImage}
+                    alt="Company Icon"
+                    onError={() => handleImageError(index)}
+                    style={{
+                        width: '40px',
+                        height: '40px',
+                        objectFit: 'cover',
+                        borderRadius: '50%',
+                        border: '2px solid #1f1f38'
+                    }}
+                />
+            );
+        }
+
+        // Fallback to dynamic icon system with Business as default
+        return <Business />;
     };
 
     return (
@@ -84,80 +138,170 @@ const WorkingExperience = () => {
             <Waypoint onEnter={_handleEnter} />
             <h5>My Professional Journey</h5>
             <h2>Working Experience</h2>
-            <div className="container">
-                <Box
-                    sx={{
-                        "& button": {
-                            color: "white"
-                        },
-                        "& button:focus": {
-                            color: "white",
-                            backgroundColor: "#4db5ff"
-                        },
-                        "& button.Mui-selected": {
-                            color: "white",
-                            backgroundColor: "#4db5ff"
-                        },
-                        flexGrow: 1,
-                        bgcolor: '#2c2c6c',
-                        display: 'flex',
-                        height: 360,
-                    }}
-                >
-                    <Tabs
-                        orientation="vertical"
-                        variant="scrollable"
-                        scrollButtons="auto"
-                        value={value}
-                        onChange={handleChange}
-                        aria-label="Vertical tabs example"
-                        sx={{ backgroundColor: '#2c2c6c', borderRight: 2, borderColor: 'divider' }}
-                    >
-                        <Tab label="Education" {...a11yProps(0)} style={{ minWidth: "50%" }} />
-                        <Tab label="Working History" {...a11yProps(1)} style={{ minWidth: "90%" }} />
-                    </Tabs>
-                    <TabPanel style={{ maxWidth: "85%", overflow: 'auto' }} value={value} index={0}>
-                        <div className="working-experience__timeline">
-                            <Timeline data={transformEducationData(educationData)} />
-                        </div>
-                    </TabPanel>
-                    <TabPanel style={{ maxWidth: "85%", overflow: 'auto' }} value={value} index={1}>
-                        <div className="working-experience__timeline">
-                            <Timeline data={transformWorkExperienceData(workExperienceData)} />
-                        </div>
-                    </TabPanel>
-                </Box>
+            <div className="container working-experience__container">
+                <Timeline position="alternate">
+                    {workExperienceData.map((item, index) => (
+                        <TimelineItem key={index}>
+                            <TimelineOppositeContent sx={{ m: 'auto 0' }} align="right" variant="body2" color="text.secondary">
+                                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                                    <Schedule fontSize="small" sx={{ color: '#4db5ff' }} />
+                                    <span style={{ color: 'rgba(255, 255, 255, 0.6)' }}>{item.period}</span>
+                                </Box>
+                            </TimelineOppositeContent>
+                            <TimelineSeparator>
+                                <TimelineDot
+                                    sx={{
+                                        backgroundColor: item.iconImage && !imageErrors.has(index) ? 'transparent' : '#4db5ff',
+                                        borderColor: item.iconImage && !imageErrors.has(index) ? 'transparent' : '#4db5ff',
+                                        boxShadow: item.iconImage && !imageErrors.has(index) ? 'none' : '0 0 20px rgba(77, 181, 255, 0.5)',
+                                        padding: '4px',
+                                        width: '44px',
+                                        height: '44px',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        '&:hover': {
+                                            backgroundColor: item.iconImage && !imageErrors.has(index) ? 'transparent' : 'rgba(77, 181, 255, 0.8)',
+                                            transform: 'scale(1.1)',
+                                            transition: 'all 400ms ease'
+                                        }
+                                    }}
+                                >
+                                    {renderIconTimeline("", item.icon, index)}
+                                </TimelineDot>
+                                <TimelineConnector
+                                    sx={{
+                                        background: 'linear-gradient(180deg, #4db5ff 0%, rgba(77, 181, 255, 0.3) 100%)',
+                                        width: '2px'
+                                    }}
+                                />
+                            </TimelineSeparator>
+                            <TimelineContent sx={{ py: '12px', px: 2 }}>
+                                <Card
+                                    sx={{
+                                        backgroundColor: '#2c2c6c',
+                                        border: '1px solid rgba(77, 181, 255, 0.3)',
+                                        borderRadius: '1rem',
+                                        transition: 'all 400ms ease',
+                                        '&:hover': {
+                                            transform: 'translateY(-5px)',
+                                            boxShadow: '0 10px 30px rgba(77, 181, 255, 0.3)',
+                                            border: '1px solid rgba(77, 181, 255, 0.6)'
+                                        }
+                                    }}
+                                >
+                                    <CardContent sx={{ padding: '1.5rem' }}>
+                                        <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+                                            <Avatar
+                                                sx={{
+                                                    backgroundColor: '#4db5ff',
+                                                    color: '#1f1f38',
+                                                    mr: 2,
+                                                    width: 48,
+                                                    height: 48,
+                                                    boxShadow: '0 0 15px rgba(77, 181, 255, 0.5)'
+                                                }}
+                                            >
+                                                {renderIconCompany(item.iconImage, item.icon, index)}
+                                            </Avatar>
+                                            <Box>
+                                                <Typography
+                                                    variant="h6"
+                                                    component="h3"
+                                                    sx={{
+                                                        fontWeight: '600',
+                                                        color: '#fff',
+                                                        fontSize: '1.1rem'
+                                                    }}
+                                                >
+                                                    {item.position}
+                                                </Typography>
+                                                <Typography
+                                                    variant="subtitle1"
+                                                    sx={{
+                                                        color: 'rgba(255, 255, 255, 0.6)',
+                                                        fontSize: '0.9rem'
+                                                    }}
+                                                >
+                                                    {item.company}
+                                                </Typography>
+                                            </Box>
+                                        </Box>
+
+                                        <Box sx={{ mb: 2 }}>
+                                            <Typography
+                                                variant="body2"
+                                                sx={{
+                                                    mb: 1,
+                                                    fontWeight: '500',
+                                                    color: '#4db5ff',
+                                                    fontSize: '0.85rem'
+                                                }}
+                                            >
+                                                Responsibilities:
+                                            </Typography>
+                                            <Typography
+                                                variant="body2"
+                                                sx={{
+                                                    lineHeight: 1.6,
+                                                    color: 'rgba(255, 255, 255, 0.8)',
+                                                    fontSize: '0.9rem'
+                                                }}
+                                            >
+                                                {item.responsibilities}
+                                            </Typography>
+                                        </Box>
+
+                                        <Box>
+                                            <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
+                                                <Code
+                                                    fontSize="small"
+                                                    sx={{
+                                                        mr: 1,
+                                                        color: '#4db5ff'
+                                                    }}
+                                                />
+                                                <Typography
+                                                    variant="body2"
+                                                    sx={{
+                                                        fontWeight: '500',
+                                                        color: '#4db5ff',
+                                                        fontSize: '0.85rem'
+                                                    }}
+                                                >
+                                                    Technologies:
+                                                </Typography>
+                                            </Box>
+                                            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
+                                                {item.technologies.map((tech, techIndex) => (
+                                                    <Chip
+                                                        key={techIndex}
+                                                        label={tech}
+                                                        size="small"
+                                                        sx={{
+                                                            backgroundColor: 'rgba(77, 181, 255, 0.1)',
+                                                            color: '#4db5ff',
+                                                            border: '1px solid rgba(77, 181, 255, 0.3)',
+                                                            fontSize: '0.75rem',
+                                                            fontWeight: '400',
+                                                            '&:hover': {
+                                                                backgroundColor: 'rgba(77, 181, 255, 0.2)',
+                                                                border: '1px solid rgba(77, 181, 255, 0.5)'
+                                                            }
+                                                        }}
+                                                    />
+                                                ))}
+                                            </Box>
+                                        </Box>
+                                    </CardContent>
+                                </Card>
+                            </TimelineContent>
+                        </TimelineItem>
+                    ))}
+                </Timeline>
             </div>
         </section>
     )
-}
-
-// Transform the work experience data to match the Timeline component's expected structure
-const transformWorkExperienceData = (data: WorkExperience[]) => {
-    return data.map(item => ({
-        title: `${item.position} at ${item.company}`,
-        content: (
-            <div className="working-experience__timeline-content">
-                <p><strong>Period:</strong> {item.period}</p>
-                <p><strong>Responsibilities:</strong> {item.responsibilities}</p>
-                <p><strong>Technologies:</strong> {item.technologies}</p>
-            </div>
-        )
-    }))
-}
-
-// Transform the education data to match the Timeline component's expected structure
-const transformEducationData = (data: Education[]) => {
-    return data.map(item => ({
-        title: item.degree,
-        content: (
-            <div className="working-experience__timeline-content">
-                <p><strong>Institution:</strong> {item.institution}</p>
-                <p><strong>Period:</strong> {item.period}</p>
-                <p>{item.description}</p>
-            </div>
-        )
-    }))
 }
 
 export default WorkingExperience

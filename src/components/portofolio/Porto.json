@@ -123,5 +123,20 @@
     "github": "#",
     "demo": "#",
     "content": "perki phase 2 was created using the C# programming language. This application is based on desktop, made for the purpose of uploading certificates belonging to perki members. This application uploads to aws s3 storage so that there is no need to scale up the server so as to cut upgraded costs."
+  },
+  {
+    "id": 7,
+    "image": [
+      "/assets/gaji_id1.webp",
+      "/assets/gaji_id2.webp",
+      "/assets/gaji_id3.webp",
+      "/assets/gaji_id4.webp",
+      "/assets/gaji_id5.webp"
+    ],
+    "skills": ["java", "spring boot", "angular", "postgresql"],
+    "title": "Gaji.id - HRIS Application",
+    "github": "#",
+    "demo": "#",
+    "content": "Gaji.id is an HRIS application that is made to facilitate company employees in managing payroll, attendance, recruitment process and other employee data. This application is made using the java programming language with a spring boot framework"
   }
 ]

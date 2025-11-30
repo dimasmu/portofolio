@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import './nav.css'
 import { AiOutlineHome, AiOutlineUser } from 'react-icons/ai'
 import { BiBook, BiMessageSquareDetail } from 'react-icons/bi'
@@ -13,6 +13,42 @@ const Nav = () => {
 
     const { active, setActive } = context
 
+    useEffect(() => {
+        const handleScroll = () => {
+            const sections = [
+                { id: '#', element: document.body },
+                { id: '#about', element: document.querySelector('#about') },
+                { id: '#experience', element: document.querySelector('#experience') },
+                { id: '#contact', element: document.querySelector('#contact') }
+            ]
+
+            const scrollPosition = window.scrollY + 100
+
+            for (let i = sections.length - 1; i >= 0; i--) {
+                const section = sections[i]
+                if (section.element) {
+                    const elementTop = section.element === document.body ? 0 : (section.element as HTMLElement).offsetTop
+                    const elementHeight = section.element === document.body ?
+                        document.documentElement.scrollHeight : (section.element as HTMLElement).offsetHeight
+
+                    if (scrollPosition >= elementTop && scrollPosition < elementTop + elementHeight) {
+                        if (active !== section.id) {
+                            setActive(section.id)
+                        }
+                        break
+                    }
+                }
+            }
+        }
+
+        window.addEventListener('scroll', handleScroll)
+        handleScroll() // Initial check
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+        }
+    }, [active, setActive])
+
     const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
         e.preventDefault()
         setActive(targetId)
@@ -23,11 +59,12 @@ const Nav = () => {
                 behavior: 'smooth'
             })
         } else {
-            const element = document.querySelector(targetId)
+            const element = document.querySelector(targetId) as HTMLElement
             if (element) {
-                element.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
+                const offsetTop = element.offsetTop - 80
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
                 })
             }
         }
