@@ -1,57 +1,43 @@
 import React from 'react'
 import './portofolio.css'
-import IMG1 from '../../assets/portfolio1.jpg'
-import IMG2 from '../../assets/portfolio2.jpg'
-import IMG3 from '../../assets/portfolio3.jpg'
-import IMG4 from '../../assets/portfolio4.jpg'
-import IMG5 from '../../assets/portfolio5.png'
-import IMG6 from '../../assets/portfolio6.jpg'
+import portfolioData from './Porto.json';
+
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+// import required modules
+import { Pagination } from "swiper";
+import { Button, createTheme } from '@mui/material';
+import { ThemeProvider } from '@emotion/react';
+
+const blueTheme = createTheme({
+  palette: {
+    warning: {
+      light: '#ffb74d',
+      main: '#ffa726',
+      dark: '#f57c00'
+    },
+  },
+});
 
 const Portofolio = () => {
-  const data = [
-    {
-      id: 1,
-      image: IMG1,
-      title: 'Crpto Currency Dashboard 7 Financial Visualitation',
-      github: 'https://github.com',
-      demo: 'https://dribble.com/Alien_pixels'
+
+  const btnSkill = {
+    bgcolor: 'warning.main',
+    color: 'black',
+    marginTop: '0.5rem',
+    marginRight: '0.5rem',
+    '&:hover': {
+      bgcolor: 'warning.light', // Change the background color on hover
+      color: 'black', // Change the text color on hover
     },
-    {
-      id: 2,
-      image: IMG2,
-      title: 'Chart templates & infographics in figma',
-      github: 'https://github.com',
-      demo: 'https://dribble.com/Alien_pixels'
-    },
-    {
-      id: 3,
-      image: IMG3,
-      title: 'Maintaining task and tracking progress',
-      github: 'https://github.com',
-      demo: 'https://dribble.com/Alien_pixels'
-    },
-    {
-      id: 4,
-      image: IMG4,
-      title: 'Chart templates & infographics in figma',
-      github: 'https://github.com',
-      demo: 'https://dribble.com/Alien_pixels'
-    },
-    {
-      id: 5,
-      image: IMG5,
-      title: 'Chart templates & infographics in figma',
-      github: 'https://github.com',
-      demo: 'https://dribble.com/Alien_pixels'
-    },
-    {
-      id: 6,
-      image: IMG6,
-      title: 'Maintaining task and tracking progress',
-      github: 'https://github.com',
-      demo: 'https://dribble.com/Alien_pixels'
-    }
-  ]
+  };
+
   return (
     <section id='portfolio'>
       <h5>My Recent Work</h5>
@@ -59,23 +45,61 @@ const Portofolio = () => {
 
       <div className='container portfolio__container'>
         {
-          data.map(({id, image, title, github, demo}) => {
-            return(
-            <article key={id} className='portfolio__item'>
-              <div className='portfolio__item-image'>
-                <img src={image} alt={title} />
-              </div>
-              <h3>{title}</h3>
-              <div className="portfolio__item-cta">
-                <a href={github} className='btn' target='_blank'>Github</a>
-                <a href={demo} className='btn btn-primary' target='_blank'>Live Demo</a>
-              </div>
-            </article>
-          )
+          portfolioData.map(({ id, image, skills, title, github, demo, content }) => {
+            return (
+              <article key={id} className='portfolio__item'>
+                <Swiper className='portfolio__item-image'
+                  pagination={{
+                    type: "progressbar",
+                    clickable: true
+                  }}
+                  spaceBetween={40}
+                  slidesPerView={1}
+                  modules={[Pagination]}
+                >
+                  {
+                    image.map((data, index) => {
+                      return (
+                        <SwiperSlide>
+                          <img src={data} alt={index + 1} />
+                        </SwiperSlide>
+                      )
+                    })
+                  }
+                </Swiper>
+                <h3>{title}</h3>
+                <p className='portofolio-content'>{content}</p>
+                <ThemeProvider theme={blueTheme}>
+                  <p className='portofolio-skill'>
+                    {
+                      skills && skills.length > 0 && skills.map((data, index) => (
+                        <Button
+                          key={index}
+                          variant="contained"
+                          disableElevation
+                          sx={btnSkill}
+                          size="small"
+                        >
+                          {data}
+                        </Button>
+                      ))
+                    }
+                  </p>
+                </ThemeProvider>
+                <div className="portfolio__item-cta" style={{ marginTop: '1rem' }}>
+                  {github !== "#" &&
+                    < a href={github} className='btn' target='_blank'>Github</a>
+                  }
+                  {demo !== "#" &&
+                    <a href={demo} className='btn btn-primary' target='_blank'>Link</a>
+                  }
+                </div>
+              </article>
+            )
           })
         }
       </div>
-    </section>
+    </section >
   )
 }
 

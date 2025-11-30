@@ -28,6 +28,19 @@ nav a:hover {
 }
 
 nav a.active {
-    background: #4343ca;
+    background: #ff8c00;
     color: var(--color-white);
+    position: relative;
+}
+
+nav a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background: #ff8c00;
+    border-radius: 50%;
 }

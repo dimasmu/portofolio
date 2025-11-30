@@ -1,0 +1,137 @@
+.working-experience__container {
+  margin-top: 2rem;
+  padding: 0 1rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .working-experience__container {
+    padding: 0 2rem;
+  }
+}
+
+/* MUI Timeline customizations to match your design */
+.working-experience__container .MuiTimeline-root {
+  padding: 20px 0;
+}
+
+.working-experience__container .MuiTimelineItem-root:before {
+  display: none;
+}
+
+.working-experience__container .MuiTimelineDot-root {
+  margin: 0;
+  padding: 2px;
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 20px rgba(77, 181, 255, 0.5);
+}
+
+.working-experience__container .MuiTimelineDot-root:hover {
+  background-color: rgba(77, 181, 255, 0.8);
+  transform: scale(1.1);
+  transition: all 400ms ease;
+}
+
+.working-experience__container .MuiTimelineConnector-root {
+  background: linear-gradient(180deg, var(--color-primary) 0%, rgba(77, 181, 255, 0.3) 100%);
+  width: 2px;
+}
+
+/* Card customizations */
+.working-experience__container .MuiCard-root {
+  background-color: var(--color-bg-variant);
+  border: 1px solid rgba(77, 181, 255, 0.3);
+  border-radius: 1rem;
+  transition: all 400ms ease;
+}
+
+.working-experience__container .MuiCard-root:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(77, 181, 255, 0.3);
+  border: 1px solid rgba(77, 181, 255, 0.6);
+}
+
+.working-experience__container .MuiCardContent-root {
+  padding: 1.5rem;
+}
+
+/* Avatar customizations */
+.working-experience__container .MuiAvatar-root {
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+  width: 48px;
+  height: 48px;
+  box-shadow: 0 0 15px rgba(77, 181, 255, 0.5);
+}
+
+/* Typography customizations */
+.working-experience__container .MuiTypography-h6 {
+  color: var(--color-white);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.working-experience__container .MuiTypography-subtitle1 {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+}
+
+.working-experience__container .MuiTypography-body2 {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Chip customizations */
+.working-experience__container .MuiChip-root {
+  background-color: rgba(77, 181, 255, 0.1);
+  color: var(--color-primary);
+  border: 1px solid rgba(77, 181, 255, 0.3);
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
+.working-experience__container .MuiChip-root:hover {
+  background-color: rgba(77, 181, 255, 0.2);
+  border: 1px solid rgba(77, 181, 255, 0.5);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .working-experience__container .MuiTimelineOppositeContent-root {
+    display: none;
+  }
+  
+  .working-experience__container .MuiTimelineItem-root:before {
+    flex: 0;
+  }
+  
+  .working-experience__container .MuiCard-root {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Ensure timeline dots are properly positioned */
+.working-experience__container .MuiTimelineItem-root {
+  min-height: 80px;
+}
+
+/* Add glow effect to timeline dots */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgba(77, 181, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(77, 181, 255, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(77, 181, 255, 0.5);
+  }
+}
+
+.working-experience__container .MuiTimelineDot-root {
+  animation: glow 2s infinite;
+}

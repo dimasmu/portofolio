@@ -6,13 +6,13 @@ import { BiCheck } from 'react-icons/bi'
 const Service = () => {
   const { active, setActive } = useContext(ActviveContext)
   const _handleEnter = () => {
-    setActive('#service')
+    setActive('#services')
   }
   const _handleLeave = () => {
     setActive('#contact')
   }
   return (
-    <section id='service'>
+    <section id='services'>
       <Waypoint onEnter={_handleEnter} />
       <h5>What i Offer</h5>
       <h2>Services</h2>

@@ -1,17 +1,29 @@
-import React, { useContext,useRef } from 'react'
+import React, { useContext, useRef } from 'react'
 import './contact.css'
 import { Waypoint } from 'react-waypoint'
-import { ActviveContext } from '../../App'
+import { ActiveContext } from '../../App'
 import { MdOutlineMail } from 'react-icons/md'
 import { RiMessengerLine } from 'react-icons/ri'
 import { BsWhatsapp } from 'react-icons/bs'
 import emailjs from '@emailjs/browser';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Contact = () => {
-  const { active, setActive } = useContext(ActviveContext)
+  const { active, setActive } = useContext(ActiveContext)
   const _handleEnter = () => {
     setActive('#contact')
   }
+
+  const notif = () => toast('The email has been sent !', {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+  });
 
   const form = useRef();
 
@@ -24,7 +36,7 @@ const Contact = () => {
       }, (error) => {
         console.log(error.text);
       });
-    
+
     e.target.reset()
   };
 
@@ -58,9 +70,11 @@ const Contact = () => {
           <input type="text" name='name' placeholder='Your full name' required />
           <input type="email" name='email' placeholder='Your Email' required />
           <textarea name="message" cols="30" rows="7" placeholder='Your message' required></textarea>
-          <button type='submit' className='btn btn-primary'>Send message</button>
+          <button type='submit' onClick={notif} className='btn btn-primary'>Send message</button>
+          <ToastContainer />
         </form>
       </div>
+      <Waypoint onLeave={_handleEnter} />
     </section>
   )
 }
