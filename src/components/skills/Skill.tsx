@@ -3,7 +3,7 @@ import './skill.css'
 import { Waypoint } from 'react-waypoint'
 import { ActiveContext } from '../../App'
 import { BsPatchCheckFill } from 'react-icons/bs'
-import { experienceData, ExperienceCategory } from '../../constant/experienceData'
+import { skillsData } from '../../constant/skillsData'
 
 const Skill = () => {
     const context = useContext(ActiveContext)
@@ -13,19 +13,19 @@ const Skill = () => {
 
     const { active, setActive } = context
     const _handleEnter = () => {
-        setActive('#experience')
+        setActive('#skills')
     }
     const _handleLeave = () => {
         setActive('#service')
     }
 
     return (
-        <section id='experience'>
+        <section id='skills'>
             <Waypoint onEnter={_handleEnter} />
             <h5>What Skills I have</h5>
             <h2>My Skill</h2>
             <div className='container experience__container'>
-                {experienceData.map((category, categoryIndex) => (
+                {skillsData.map((category, categoryIndex) => (
                     <div key={categoryIndex} className={`experience__${category.title.toLowerCase().replace(' ', '')}`}>
                         <h3>{category.title}</h3>
                         <div className="experience__content">

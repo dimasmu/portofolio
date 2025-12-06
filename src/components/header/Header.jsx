@@ -10,7 +10,7 @@ function Header() {
     setActive('#')
   }
   const _handleLeave = () => {
-    setActive('#about')
+    setActive('#workingexperiences')
   }
   return (
     <header>

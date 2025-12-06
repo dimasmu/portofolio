@@ -17,8 +17,8 @@ const Nav = () => {
         const handleScroll = () => {
             const sections = [
                 { id: '#', element: document.body },
-                { id: '#about', element: document.querySelector('#about') },
-                { id: '#experience', element: document.querySelector('#experience') },
+                { id: '#workingexperiences', element: document.querySelector('#workingexperiences') },
+                { id: '#skills', element: document.querySelector('#skills') },
                 { id: '#contact', element: document.querySelector('#contact') }
             ]
 
@@ -73,8 +73,8 @@ const Nav = () => {
     return (
         <nav id='navbarid' className="bg-color-bg bg-opacity-30 w-max block p-3 px-7 z-2 fixed left-1/2 transform -translate-x-1/2 bottom-8 flex gap-3 rounded-3xl backdrop-blur-lg">
             <a id='nav_home' href="#" onClick={(e) => handleNavClick(e, '#')} className={`bg-transparent p-4 rounded-full flex text-color-light text-xl hover:bg-color-bg hover:bg-opacity-30 ${active === '#' ? 'bg-color-primary text-color-white' : ''}`}><AiOutlineHome /></a>
-            <a id='nav_about' href="#about" onClick={(e) => handleNavClick(e, '#about')} className={`bg-transparent p-4 rounded-full flex text-color-light text-xl hover:bg-color-bg hover:bg-opacity-30 ${active === '#about' ? 'bg-color-primary text-color-white' : ''}`}><AiOutlineUser /></a>
-            <a id='nav_experience' href="#experience" onClick={(e) => handleNavClick(e, '#experience')} className={`bg-transparent p-4 rounded-full flex text-color-light text-xl hover:bg-color-bg hover:bg-opacity-30 ${active === '#experience' ? 'bg-color-primary text-color-white' : ''}`}><BiBook /></a>
+            <a id='nav_workingexperiences' href="#workingexperiences" onClick={(e) => handleNavClick(e, '#workingexperiences')} className={`bg-transparent p-4 rounded-full flex text-color-light text-xl hover:bg-color-bg hover:bg-opacity-30 ${active === '#workingexperiences' ? 'bg-color-primary text-color-white' : ''}`}><AiOutlineUser /></a>
+            <a id='nav_skills' href="#skills" onClick={(e) => handleNavClick(e, '#skills')} className={`bg-transparent p-4 rounded-full flex text-color-light text-xl hover:bg-color-bg hover:bg-opacity-30 ${active === '#skills' ? 'bg-color-primary text-color-white' : ''}`}><BiBook /></a>
             {/* <a id='nav_service' href="#services" onClick={(e) => handleNavClick(e, '#services')} className={`bg-transparent p-4 rounded-full flex text-color-light text-xl hover:bg-color-bg hover:bg-opacity-30 ${active === '#services' ? 'bg-color-primary text-color-white' : ''}`}><RiServiceLine/></a> */}
             <a id='nav_contact' href="#contact" onClick={(e) => handleNavClick(e, '#contact')} className={`bg-transparent p-4 rounded-full flex text-color-light text-xl hover:bg-color-bg hover:bg-opacity-30 ${active === '#contact' ? 'bg-color-primary text-color-white' : ''}`}><BiMessageSquareDetail /></a>
         </nav>

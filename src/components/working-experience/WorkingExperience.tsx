@@ -45,7 +45,7 @@ const WorkingExperience = () => {
 
     const { active, setActive } = context
     const _handleEnter = () => {
-        setActive('#about')
+        setActive('#workingexperiences')
     }
 
     // State to track image loading errors
@@ -134,7 +134,7 @@ const WorkingExperience = () => {
     };
 
     return (
-        <section id='about'>
+        <section id='workingexperiences'>
             <Waypoint onEnter={_handleEnter} />
             <h5>My Professional Journey</h5>
             <h2>Working Experience</h2>

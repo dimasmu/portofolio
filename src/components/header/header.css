@@ -1,137 +1,138 @@
 header {
-    margin-top: 10rem;
-    height: 60vh;
-    padding-top: 7rem;
-    overflow: hidden;
+  margin-top: 10rem;
+  height: 60vh;
+  padding-top: 7rem;
+  overflow: hidden;
 }
 
 .header_container {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    position: relative;
-    min-height: fit-content;
-    gap: 5rem;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  position: relative;
+  min-height: fit-content;
+  gap: 5rem;
 }
 
 .profile__content {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .profile__picture {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 1px 0 0 var(--color-bg);
-    border-radius: 50%;
-    height: 380px;
-    width: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 0 0 var(--color-bg);
+  border-radius: 50%;
+  height: 380px;
+  width: 380px;
 }
 
 .profile__picture-background {
-    height: 92%;
-    width: 92%;
-    border-radius: 50%;
-    background-image: url("/public/assets/me.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: inherit;
+  height: 92%;
+  width: 92%;
+  border-radius: 50%;
+  background-image: url("/public/assets/me_v2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: inherit;
+  background-position: 30% 70%;
 }
 
 .profile__picture-background:hover {
-    -webkit-transform: scale(1.07);
-    transform: scale(1.07);
-    transition: 1s ease-out;
+  -webkit-transform: scale(1.07);
+  transform: scale(1.07);
+  transition: 1s ease-out;
 }
 
-.profile__options{
-    display: flex;
-    gap: 1rem;
+.profile__options {
+  display: flex;
+  gap: 1rem;
 }
 
 /*===============CTA=================*/
 .cta {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
 }
 
 /*===============HEADER SOCIALS=================*/
 .header_socials {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.8rem;
-    position: absolute;
-    left: 0;
-    bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  position: absolute;
+  left: 0;
+  bottom: 3rem;
 }
 
 .header_socials::after {
-    content: '';
-    width: 1px;
-    height: 2rem;
-    background: var(--color-primary);
+  content: "";
+  width: 1px;
+  height: 2rem;
+  background: var(--color-primary);
 }
 
 .profile-container {
-    display: flex;
+  display: flex;
 }
 
 /*===============ME=================*/
 .me {
-    background: linear-gradient(var(--color-primary), transparent);
-    width: 22rem;
-    height: 30rem;
-    position: absolute;
-    left: calc(50% - 11rem);
-    margin-top: 4rem;
-    border-radius: 12rem 12rem 0 0;
-    overflow: hidden;
-    padding: 5rem 1.5rem 1.5rem 1.5rem;
+  background: linear-gradient(var(--color-primary), transparent);
+  width: 22rem;
+  height: 30rem;
+  position: absolute;
+  left: calc(50% - 11rem);
+  margin-top: 4rem;
+  border-radius: 12rem 12rem 0 0;
+  overflow: hidden;
+  padding: 5rem 1.5rem 1.5rem 1.5rem;
 }
 
 /*===============SCROLL DOWN=================*/
 .scroll_down {
-    position: absolute;
-    right: -2.3rem;
-    bottom: 5rem;
-    transform: rotate(90deg);
-    font-weight: 300;
-    font-size: 0.9rem;
+  position: absolute;
+  right: -2.3rem;
+  bottom: 5rem;
+  transform: rotate(90deg);
+  font-weight: 300;
+  font-size: 0.9rem;
 }
 
 /*===============MEDIA QUERY (MEDIUM DEVICES)=================*/
 @media screen and (max-width: 1024px) {
-    header {
-        height: 80vh;
-    }
+  header {
+    height: 80vh;
+  }
 
-    section {
-        margin-top: 6rem;
-    }
+  section {
+    margin-top: 6rem;
+  }
 }
 
 /*===============MEDIA QUERY (SMALL DEVICES)=================*/
 @media screen and (max-width: 600px) {
-    header {
-        height: 125vh;
-    }
+  header {
+    height: 125vh;
+  }
 
-    .header_socials,
-    .scroll_down {
-        display: none;
-    }
+  .header_socials,
+  .scroll_down {
+    display: none;
+  }
 
-    section>h2 {
-        margin-bottom: 2rem;
-    }
+  section > h2 {
+    margin-bottom: 2rem;
+  }
 
-    .header_container {
-        display: flex;
-        flex-direction: column;
-    }
+  .header_container {
+    display: flex;
+    flex-direction: column;
+  }
 }

@@ -8,6 +8,7 @@ import Portofolio from "./components/portofolio/Portofolio"
 import Contact from "./components/contact/Contact"
 import Footer from "./components/footer/Footer"
 import Skill from './components/skills/Skill';
+import SkillNew from './components/skills/skillNew';
 
 interface ActiveContextType {
     active: string;
@@ -25,7 +26,8 @@ const App = () => {
                 <Header />
                 <Nav />
                 <WorkingExperience />
-                <Skill />
+                {/* <Skill /> */}
+                <SkillNew />
                 {/* <Service /> */}
                 <Portofolio />
                 <Contact />

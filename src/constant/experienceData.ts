@@ -4,12 +4,12 @@ export interface Skill {
   level: string;
 }
 
-export interface ExperienceCategory {
+export interface SkillCategory {
   title: string;
   skills: Skill[];
 }
 
-export const experienceData: ExperienceCategory[] = [
+export const experienceData: SkillCategory[] = [
   {
     title: "Frontend Development",
     skills: [
